@@ -1,0 +1,44 @@
+.card {
+  position: relative;
+  width: 150px;
+  height: 250px;
+  border: 1px solid #ebecf1;
+  border-radius: 5px;
+  background: linear-gradient(#1d267d, #5c469c);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.front {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.back {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.card .front {
+  transform: translateY(-500px);
+  position: absolute;
+  top: 0;
+  transition: all 0.3s ease;
+}
+.flipped .front {
+  transform: translateY(0);
+}
+.flipped .back {
+  transition: all 0.2s ease;
+}
+.flipped .back {
+  transform: rotateY(-90deg);
+  transition: all 0.2s ease;
+}
+@media (max-width: 780px) {
+  .card {
+    width: 80px;
+    height: 150px;
+  }
+}

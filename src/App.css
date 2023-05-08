@@ -1,0 +1,77 @@
+.container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.container h1 {
+  margin-top: 5rem;
+  color: #ebecf1;
+}
+.btn {
+  text-decoration: none;
+  color: white;
+  font-family: sans-serif;
+  font-size: 20px;
+  border: 2px solid #ebecf1;
+  padding: 1rem 3rem;
+  position: relative;
+  transition: all 1s;
+  overflow: hidden;
+  background-color: transparent;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+.btn::before {
+  content: "Go!";
+  color: white;
+  background-color: #0c9463;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  transform: translateY(-100%);
+  transition: all 0.5s;
+}
+.btn:hover:before {
+  transform: translateY(0);
+}
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 5rem;
+  gap: 2rem;
+}
+.container p {
+  font-size: 30px;
+  color: #ebecf1;
+  margin-top: 3rem;
+  font-weight: 600;
+}
+.finished {
+  background-color: green;
+}
+.finished::before {
+  content: "Restart";
+  color: white;
+  background-color: #0c9463;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  transform: translateY(-100%);
+  transition: all 0.5s;
+}
+@media (max-width: 465px) {
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
